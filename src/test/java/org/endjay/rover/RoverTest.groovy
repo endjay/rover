@@ -13,9 +13,8 @@ class RoverTest extends GroovyTestCase {
 
     }
 
-    void testPosition() {
-        String roverPosition = Rover.position(5,5);
-        assertEquals('5 5 N',roverPosition);
+    void testSetRoverPosition() {
+        Rover.position(5,5,1);
     }
 
     void testSetPlateu(){
@@ -23,7 +22,6 @@ class RoverTest extends GroovyTestCase {
         Integer maxY = Rover.maxY;
         assertEquals(maxX,5);
         assertEquals(maxY,5);
-
     }
 
     void testTurnLeft(){
@@ -35,6 +33,10 @@ class RoverTest extends GroovyTestCase {
     }
 
     void testMoveForward(){
+
+    }
+
+    void testCurrentPosition(){
 
     }
 

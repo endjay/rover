@@ -5,11 +5,13 @@ package org.endjay.rover;
  */
 public class Rover {
 
+    public static final Integer maxX  = 5;
+    public  static final Integer maxY =  5;
 
     public void main(String[] args){
 
     }
-    public String position (Integer x, Integer y, Integer facing ){
+    public String position (Integer x, Integer y, Integer facing ) throws  Exception {
         String direction = "N";
 
         if(facing == 1 ){
@@ -22,6 +24,7 @@ public class Rover {
             direction = "w";
         }
 
+        System.out.println(direction);
         String xAxis = x.toString();
         String yAxis = y.toString();
 

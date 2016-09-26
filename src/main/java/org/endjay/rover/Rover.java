@@ -1,63 +1,84 @@
 package org.endjay.rover;
 
+import java.util.Scanner;
 /**
  * Created by gustiamanda on 9/26/16.
  */
 public class Rover {
 
-    public static final Integer maxX  = 5;
-    public  static final Integer maxY =  5;
 
-    public Integer  x  = 0;
-    public  Integer y = 0;
+    public static Integer  xAxis  = 0;
+    public  static Integer yAxis = 0;
 
-    public String direction = "N";
+    public  static String direction = "N";
 
-    public void main(String[] args){
-        setRoverPosition(1,2,1);
+    public static void main(String[] args){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter Plateu limit : ");
+        Integer xLimit = reader.nextInt();
+        Integer yLimit = reader.nextInt();
+        System.out.format("%d and %d",xLimit,yLimit);
+
+        //Rover.setRoverPosition(1,2,1);
+        //Rover.turn("L");
+        //System.out.format("The value of i is: %d,%d,%s", xAxis,yAxis,direction);
+
     }
 
 
-    public void setRoverPosition(Integer x, Integer y, Integer facing)  {
+
+    public static void setRoverPosition(Integer x, Integer y, Integer facing)  {
+
         if(facing == 1 ){
-            this.direction = "N";
+            direction = "N";
         }else if( facing == 2){
-            this.direction = "S";
+            direction = "S";
         }else if(facing == 3 ){
-            this.direction = "E";
+            direction = "E";
         }else if( facing == 4){
-            this.direction = "w";
+            direction = "W";
         }
 
-        this.x = x;
-        this.y = y;
+        xAxis = x;
+        yAxis = y;
     }
 
-    public void turn(String command){
-        String currentDirection = this.direction;
+    public static void turn(String command){
+        String currentDirection = direction;
 
         if(currentDirection == "N" && command == "L"){
-            this.direction = "W";
+            direction = "W";
         }else if(currentDirection == "N" && command == "R"){
-            this.direction = "E";
+            direction = "E";
         }else if(currentDirection == "E" && command == "L"){
-            this.direction = "N";
+            direction = "N";
         }else if(currentDirection == "E" && command == "R"){
-            this.direction = "S";
+            direction = "S";
         }else if(currentDirection == "S" && command == "L"){
-            this.direction = "E";
+            direction = "E";
         }else if(currentDirection == "S" && command == "R"){
-            this.direction = "W";
+            direction = "W";
         }else if(currentDirection == "W" && command == "L"){
-            this.direction = "S";
+            direction = "S";
         }else if(currentDirection == "W" && command == "R"){
-            this.direction = "N";
+            direction = "N";
         }
     }
 
     public void move(){
-        Integer currentX = this.x;
-        Integer currentY = this.y;
+        Integer currentX = xAxis;
+        Integer currentY = yAxis;
+
+        if(this.direction == "N"){
+            yAxis += 1;
+        }else if(this.direction == "S"){
+            yAxis -= 1;
+        }else if(this.direction == "E"){
+            xAxis += 1;
+
+        }else if(this.direction == "W"){
+            xAxis -= 1;
+        }
 
     }
 

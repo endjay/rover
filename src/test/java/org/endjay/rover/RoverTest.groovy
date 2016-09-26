@@ -13,16 +13,6 @@ class RoverTest extends GroovyTestCase {
 
     }
 
-    void testSetRoverPosition() {
-        Rover.position(5,5,1);
-    }
-
-    void testSetPlateu(){
-        Integer maxX = Rover.maxX;
-        Integer maxY = Rover.maxY;
-        assertEquals(maxX,5);
-        assertEquals(maxY,5);
-    }
 
     void testTurnLeft(){
 

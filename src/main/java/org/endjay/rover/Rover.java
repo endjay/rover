@@ -55,7 +55,11 @@ public class Rover {
         }
     }
 
-    
+    public void move(){
+        Integer currentX = this.x;
+        Integer currentY = this.y;
+
+    }
 
 
 

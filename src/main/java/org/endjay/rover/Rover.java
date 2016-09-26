@@ -22,7 +22,7 @@ public class Rover {
         rover.setRoverCommand();
 
 
-        System.out.format("The value of i is: %d,%d,%s", rover.xAxis,rover.yAxis,rover.direction);
+        System.out.format("Rover Current Position is : %d %d %s ", rover.xAxis,rover.yAxis,rover.direction);
 
     }
 
@@ -48,52 +48,54 @@ public class Rover {
         System.out.println("Upload Command: ");
         String command = reader.next();
         String[] splitedCommand = command.split("");
-        for (int i=0; i<splitedCommand.length; i++)
+
+        for (String s: splitedCommand)
         {
-            if(splitedCommand[i] == "L"){
-                turn(splitedCommand[i]);
-            }else if(splitedCommand[i] == "M"){
+            if(s.equals("L") || s.equals("R") ){
+                turn(s);
+            }else if(s.equals("M")){
                 move();
             }
         }
 
-
     }
 
-    public  void turn(String command){
+    public void turn(String command){
         String currentDirection = direction;
 
-        if(currentDirection == "N" && command == "L"){
+        if(currentDirection.equals("N") && command.equals("L")){
             direction = "W";
-        }else if(currentDirection == "N" && command == "R"){
+        }else if(currentDirection.equals("N") && command.equals("R")){
             direction = "E";
-        }else if(currentDirection == "E" && command == "L"){
+        }else if(currentDirection.equals("E") && command.equals("L")){
             direction = "N";
-        }else if(currentDirection == "E" && command == "R"){
+        }else if(currentDirection.equals("E") && command.equals("R")){
             direction = "S";
-        }else if(currentDirection == "S" && command == "L"){
+        }else if(currentDirection.equals("S") && command.equals("L")){
             direction = "E";
-        }else if(currentDirection == "S" && command == "R"){
+        }else if(currentDirection.equals("S") && command.equals("R")){
             direction = "W";
-        }else if(currentDirection == "W" && command == "L"){
+        }else if(currentDirection.equals("W") && command.equals("L")){
             direction = "S";
-        }else if(currentDirection == "W" && command == "R"){
+        }else if(currentDirection.equals("W") && command.equals("R")){
             direction = "N";
         }
+
     }
 
-    public  void move(){
+    public void move(){
 
-        if(direction == "N"){
-            yAxis += 1;
-        }else if(direction == "S"){
-            yAxis -= 1;
-        }else if(direction == "E"){
-            xAxis += 1;
-
-        }else if(direction == "W"){
-            xAxis -= 1;
+        if(direction.equals("N")){
+            yAxis = yAxis + 1;
+        }else if(direction.equals("S")){
+            yAxis = yAxis - 1;
+        }else if(direction.equals("E")){
+            xAxis = xAxis + 1;
+        }else if(direction.equals("W")){
+            xAxis = xAxis - 1;
         }
+
+
 
     }
 

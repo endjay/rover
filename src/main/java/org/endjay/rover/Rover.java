@@ -11,7 +11,10 @@ public class Rover {
     public void main(String[] args){
 
     }
-    public String position (Integer x, Integer y, Integer facing ) throws  Exception {
+
+    
+    public static String position (Integer x, Integer y, Integer facing )  {
+
         String direction = "N";
 
         if(facing == 1 ){
@@ -24,7 +27,6 @@ public class Rover {
             direction = "w";
         }
 
-        System.out.println(direction);
         String xAxis = x.toString();
         String yAxis = y.toString();
 

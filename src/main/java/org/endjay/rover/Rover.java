@@ -7,13 +7,13 @@ import java.util.Scanner;
 public class Rover {
 
 
-    public  static  Integer xLimit = 0;
-    public  static Integer yLimit = 0;
+    public   Integer xLimit = 0;
+    public   Integer yLimit = 0;
 
-    public static Integer  xAxis  = 0;
-    public  static Integer yAxis = 0;
+    public  Integer  xAxis  = 0;
+    public  Integer yAxis = 0;
 
-    public  static String direction = "N";
+    public   String direction = "N";
 
     public static void main(String[] args){
         Rover rover = new Rover();

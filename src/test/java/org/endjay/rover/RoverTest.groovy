@@ -5,30 +5,35 @@ package org.endjay.rover
  */
 class RoverTest extends GroovyTestCase {
 
-    void testMain() {
-
-    }
-
-    void  TestrunRover(){
-
-    }
-
-
     void testTurnLeft(){
-
+        Rover rover = new Rover();
+        rover.turn("L");
+        assertEquals(rover.direction,"W");
     }
 
     void testTurnRight(){
-
+        Rover rover = new Rover();
+        rover.turn("R");
+        assertEquals(rover.direction,"E");
     }
 
     void testMoveForward(){
-
+        Rover rover = new Rover();
+        System.out.println(rover.yAxis);
+        rover.move();
+        assertEquals(rover.yAxis,1);
     }
 
-    void testCurrentPosition(){
-
+    void testMoveBackward(){
+        Rover rover = new Rover();
+        rover.yAxis = 3;
+        rover.direction = "S";
+        System.out.println(rover.yAxis);
+        rover.move();
+        assertEquals(rover.yAxis,2);
     }
+
+
 
 
 
